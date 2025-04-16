@@ -25,7 +25,7 @@
                         @foreach($data['rows'] as $i => $row)
                             <tr>
                                 <td>{{$i+1}}</td>
-                                <td>{{$row->course_namename}}</td>
+                                <td>{{$row->course_name}}</td>
                                 <td>{{$row->course_code}}</td>
                                 <td>{{$row->faculty_id}}</td>
                                 <td>

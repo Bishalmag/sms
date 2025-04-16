@@ -43,12 +43,14 @@ class StudentController extends Controller
         //dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
+            'student_id' => 'required|string',
             'email' => 'required|string',
             'phone' => 'required|digits:10',
             'address' => 'required|string',
         ]);
         Students::create([
             'name' => $request->name,
+            'student_id' => $request->student_id,
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
@@ -116,6 +118,7 @@ class StudentController extends Controller
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
+            'student_id' =>'required|string',
             'email' => 'required|string',
             'phone' => 'required|digits:10',
             'address' => 'required|string',
@@ -124,6 +127,7 @@ class StudentController extends Controller
         // Update the student
         $student->update([
             'name' => $request->name,
+            'student_id' => $request->student_id,
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,

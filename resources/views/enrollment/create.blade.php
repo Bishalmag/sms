@@ -9,66 +9,33 @@
 
                 <!-- Form for Creating Student -->
                 <div class="justify-content-center ">
-                <form method="POST" action="{{ url('/students/store') }}">
+                <form method="POST" action="{{ url('/enrollment/store') }}">
+    @csrf
+
+    <div class="form-group">
+    <label for="student_id">Select Student:</label>
+    <select name="student_id" required class="form-control">
+        <option value="">Choose a Student</option>
+        @foreach ($students as $student)
+            <option value="{{ $student->id }}">{{ $student->name }}</option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="course_id">Select Course:</label>
+    <select name="course_id" required class="form-control">
+        <option value="">Choose a Course</option>
+        @foreach ($courses as $course)
+            <option value="{{ $course->id }}">{{ $course->course_name }}</option>
+        @endforeach
+    </select>
+</div>
 
 
-                    @csrf
+    <button type="submit">Enroll Student</button>
+</form>
 
-                    <!-- name Field -->
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name"
-                               class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
-                               required>
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                     <!-- email Field -->
-                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email"
-                               class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
-                               required>
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                     <!-- phone Field -->
-                     <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="number" name="phone" id="phone"
-                               class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}"
-                               required>
-                        @error('phone')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <!-- address Field -->
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <textarea name="address" id="address"
-                                  class="form-control @error('address') is-invalid @enderror" rows="4"
-                                  required>{{ old('address') }}</textarea>
-                        @error('address')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
                 </div>
             </div>
         </div>

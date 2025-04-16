@@ -16,4 +16,14 @@ class Results extends Model
         'marks',
         'grade'
     ];
+    public function student()
+    {
+        return $this->belongsTo(Students::class);
+    }
+
+    // 🔗 Relationship to course
+    public function course()
+    {
+        return $this->belongsTo(Courses::class);
+    }
 }

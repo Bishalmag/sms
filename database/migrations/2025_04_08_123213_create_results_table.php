@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('student_id')->constrained('students', 'id');
             $table->foreignId('course_id')->constrained('courses', 'id');
-            $table->boolean('term')->default(0);
+            $table->string('term')->default(0);
             $table->integer('marks')->nullable();
             $table->string('grade')->nullable();
             $table->timestamps();

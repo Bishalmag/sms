@@ -42,12 +42,15 @@ class facultiesController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        
         $request->validate([
+            'faculty_id' => 'required|integer',
             'name' => 'required|string|max:255',
             'email' => 'required|string',
             'phone' => 'required|integer|digits:10',
         ]);
         Faculties::create([
+            'faculty_id' => $request->faculty_id,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -110,6 +113,7 @@ class facultiesController extends Controller
 
         // Validate the request
         $request->validate([
+            'faculty_id' => 'required|integer',
             'name' => 'required|string|max:255',
             'email' => 'required|string',
             'phone' => 'required|integer|digits:10',
@@ -117,11 +121,13 @@ class facultiesController extends Controller
 
         // Update the faculty
         $faculty->update([
+            'faculty_id' => $request->faculty_id,
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone
             
         ]);
+        
 
         return redirect()->route('faculty.index')->with('success', 'faculty updated successfully.');
     }

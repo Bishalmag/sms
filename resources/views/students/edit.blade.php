@@ -23,6 +23,18 @@
                         </span>
                         @enderror
                     </div>
+                     <!-- name student_id -->
+                     <div class="form-group">
+                        <label for="student_id">Student Id</label>
+                        <input type="number" name="student_id" id="student_id"
+                               class="form-control @error('student_id') is-invalid @enderror" value="{{ old('student_id') }}"
+                               required>
+                        @error('student_id')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                     <!-- Email Field -->
                     <div class="form-group">

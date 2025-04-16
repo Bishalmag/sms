@@ -11,6 +11,10 @@
             <div class="card-body">
                 <table class="table table-bordered">
                     <tr>
+                        <th>Faculty Id</th>
+                        <td>{{ $faculty->faculty_id }}</td>
+                    </tr>
+                    <tr>
                         <th>Name</th>
                         <td>{{ $faculty->name }}</td>
                     </tr>

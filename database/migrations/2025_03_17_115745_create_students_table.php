@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('student_id');
             $table->string('email');
-            $table->varchar('phone');
+            $table->string('phone');
             $table->string('address');
             $table->foreignId('created_by')->constrained('users', 'id');
             $table->timestamps();

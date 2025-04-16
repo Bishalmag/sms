@@ -11,6 +11,19 @@
                     @csrf
                     @method('PUT')
 
+                      <!-- name faculty id -->
+                      <div class="form-group">
+                        <label for="faculty_id">Faculty Id</label>
+                        <input type="number" name="faculty_id" id="faculty_id"
+                               class="form-control @error('faculty_id') is-invalid @enderror" value="{{ old('faculty_id') }}"
+                               required>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
                     <!-- Name Field -->
                     <div class="form-group">
                         <label for="name">Name</label>

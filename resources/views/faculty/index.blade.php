@@ -15,6 +15,7 @@
                     <thead>
                         <tr>
                             <th>SN</th>
+                            <th>Faculty Id</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
@@ -26,6 +27,7 @@
                         @foreach($data['rows'] as $i => $row)
                             <tr>
                                 <td>{{$i+1}}</td>
+                                <td>{{$row->faculty_id}}</td>
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>{{$row->phone}}</td>

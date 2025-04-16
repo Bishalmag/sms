@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\Faculties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,14 +45,13 @@ class CoursesController extends Controller
         $request->validate([
             'course_name' => 'required|string|max:255',
             'course_code' => 'required|string',
-            'faculty_id' => 'required|integer',
+            'faculty_id' => 'required|integer|exists:faculties,faculty_id',
         ]);
         Courses::create([
             'course_name' => $request->course_name,
             'course_code' => $request->course_code,
             'faculty_id' => $request->faculty_id,
         ]);
-
         return redirect()->route('courses.index')->with('success', 'courses created successfully.');
     }
 

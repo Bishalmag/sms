@@ -11,33 +11,18 @@
             <div class="card-body">
                 <table class="table table-bordered">
                     <tr>
-                        <th>Name</th>
-                        <td>{{ $student->name }}</td>
+                        <th>Course Name</th>
+                        <td>{{ $courses->course_name }}</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
-                        <td>{{ $student->email }}</td>
+                        <th>Course Code</th>
+                        <td>{{ $courses->course_code }}</td>
                     </tr>
                     <tr>
                         <th>Phone</th>
-                        <td>{{ $student->phone }}</td>
+                        <td>{{ $courses->faculty_id }}</td>
                     </tr>
-                    <tr>
-                        <th>Address</th>
-                        <td>{{ $student->address }}</td>
-                    </tr>
-                    <tr>
-                        <th>Created At</th>
-                        <td>{{ $student->created_at }}</td>
-                    </tr>
-                    <tr>
-                        <th>Updated At</th>
-                        <td>{{ $student->updated_at }}</td>
-                    </tr>
-                    <tr>
-                        <th>Created By</th>
-                        <td>{{ $student->creator->name }}</td>
-                    </tr>
+                    
                 </table>
             </div>
             <!-- /.card-body -->

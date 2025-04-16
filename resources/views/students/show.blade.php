@@ -15,6 +15,10 @@
                         <td>{{ $student->name }}</td>
                     </tr>
                     <tr>
+                        <th>Student Id</th>
+                        <td>{{ $student->student_id }}</td>
+                    </tr>
+                    <tr>
                         <th>Email</th>
                         <td>{{ $student->email }}</td>
                     </tr>

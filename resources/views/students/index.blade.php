@@ -16,6 +16,7 @@
                         <tr>
                             <th>SN</th>
                             <th>Name</th>
+                            <th>Student Id</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Address</th>
@@ -29,6 +30,7 @@
                             <tr>
                                 <td>{{$i+1}}</td>
                                 <td>{{$row->name}}</td>
+                                <td>{{$row->student_id}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>{{$row->phone}}</td>
                                 <td>{{$row->address}}</td>

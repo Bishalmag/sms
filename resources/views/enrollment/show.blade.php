@@ -1,49 +1,42 @@
 @extends('layouts.master')
 
-@section('title', 'Students')
-@section('pageTitle', 'Students Details')
+@section('title', 'Enrollment Details')
+@section('pageTitle', 'Enrollment Details')
 
 @section('content')
     <section class="content">
     
-        <!-- Students Details Box -->
+        <!-- Enrollment Details Box -->
         <div class="card">
             <div class="card-body">
                 <table class="table table-bordered">
                     <tr>
-                        <th>Name</th>
-                        <td>{{ $student->name }}</td>
+                        <th>Student Name</th>
+                        <td>{{ $enrollment->student->name }}</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
-                        <td>{{ $student->email }}</td>
+                        <th>Student Email</th>
+                        <td>{{ $enrollment->student->email }}</td>
                     </tr>
                     <tr>
-                        <th>Phone</th>
-                        <td>{{ $student->phone }}</td>
+                        <th>Student Phone</th>
+                        <td>{{ $enrollment->student->phone }}</td>
                     </tr>
                     <tr>
-                        <th>Address</th>
-                        <td>{{ $student->address }}</td>
+                        <th>Course Name</th>
+                        <td>{{ $enrollment->course->course_name }}</td>
                     </tr>
                     <tr>
-                        <th>Created At</th>
-                        <td>{{ $student->created_at }}</td>
+                        <th>Course Code</th>
+                        <td>{{ $enrollment->course->course_code }}</td>
                     </tr>
-                    <tr>
-                        <th>Updated At</th>
-                        <td>{{ $student->updated_at }}</td>
-                    </tr>
-                    <tr>
-                        <th>Created By</th>
-                        <td>{{ $student->creator->name }}</td>
-                    </tr>
+                    
                 </table>
             </div>
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <a href="{{ route('students.index') }}" class="btn btn-secondary">Back to Students</a>
+                <a href="{{ route('enrollment.index') }}" class="btn btn-secondary">Back to Enrollments</a>
             </div>
         </div>
         <!-- /.card -->

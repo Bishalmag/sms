@@ -14,4 +14,18 @@ class Courses extends Model
         'course_code',
         'faculty_id'
     ];
+
+
+public function faculty()
+{
+    return $this->belongsTo(Faculties::class, 'faculty_id', 'faculty_id');
+}
+public function students()
+{
+    return $this->belongsToMany(students::class, 'enrollments');
+}
+public function enrollments()
+{
+    return $this->hasMany(Enrollments::class);
+}
 }
